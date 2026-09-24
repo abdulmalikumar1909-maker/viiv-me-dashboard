@@ -447,3 +447,35 @@ footer strong {
   gap: 18px;
   width: 100%;
 }
+/* FINAL KPI LAYOUT FIX */
+.dashboard .kpi-grid {
+  display: grid !important;
+  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  width: 100% !important;
+}
+
+.dashboard .kpi-grid .card {
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 115px !important;
+  min-height: 115px !important;
+  padding: 20px !important;
+  background: #ffffff !important;
+  border: 1px solid #e4eaf1 !important;
+  border-radius: 16px !important;
+  box-sizing: border-box !important;
+}
+
+.dashboard .kpi-grid .card span {
+  display: block !important;
+  font-size: 13px !important;
+  margin-bottom: 12px !important;
+}
+
+.dashboard .kpi-grid .card strong {
+  display: block !important;
+  font-size: 30px !important;
+}
