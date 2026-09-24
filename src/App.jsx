@@ -33,9 +33,12 @@ function App() {
     );
   }
 
-  const k = data.kpis;
-  const facilities = data.byFacility || [];
+ const k = data?.kpis;
+const facilities = data?.byFacility || [];
 
+if (!k) {
+  return <div className="dashboard">Loading dashboard...</div>;
+}
   const selected =
     selectedFacility === "All Facilities"
       ? null
