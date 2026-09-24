@@ -447,6 +447,7 @@ footer strong {
   gap: 18px;
   width: 100%;
 }
+}
 /* FINAL KPI LAYOUT FIX */
 .dashboard .kpi-grid {
   display: grid !important;
@@ -478,5 +479,4 @@ footer strong {
 .dashboard .kpi-grid .card strong {
   display: block !important;
   font-size: 30px !important;
-}
 }
