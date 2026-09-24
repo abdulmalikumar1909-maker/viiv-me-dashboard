@@ -117,10 +117,14 @@ section {
 
 .card {
   position: relative;
-  background: white;
+  display: block;
+  width: 100%;
+  min-height: 115px !important;
+  height: auto !important;
+  box-sizing: border-box;
+  background: #ffffff;
   border-radius: 16px;
   padding: 20px;
-  min-height: 115px;
   border: 1px solid #e4eaf1;
   box-shadow: 0 5px 18px rgba(30, 55, 80, 0.07);
   overflow: hidden;
@@ -391,10 +395,12 @@ footer strong {
   .live-status {
     align-self: center;
   }
-
-  .kpi-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 18px;
+  width: 100%;
+}
 
   .card {
   position: relative;
