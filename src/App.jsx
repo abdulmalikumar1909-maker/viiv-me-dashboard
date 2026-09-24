@@ -34,6 +34,8 @@ function App() {
   }
 
  const k = data?.kpis;
+ console.log("Dashboard data:", data);
+console.log("Dashboard KPIs:", k);
 const facilities = data?.byFacility || [];
 
 if (!k) {
