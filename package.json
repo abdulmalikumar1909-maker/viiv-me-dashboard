@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "sanitize-data": "node scripts/sanitize-data.mjs"
+    "sanitize-data": "node scripts/sanitize-data.mjs",
+    "private": "vite --port 5174 --open"
   },
   "dependencies": {
     "papaparse": "^5.7.0",

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-09-25T11:00:56",
+    "generatedAt": "2026-09-25T11:32:59",
     "fiscalYear": 2026,
     "periodStart": "2025-10-01",
     "periodEnd": "2026-09-30",
@@ -810,5 +810,187 @@
       "label": "Unsuppressed after EAC",
       "count": 3
     }
-  ]
+  ],
+  "dataQuality": {
+    "rowsByFacility": {
+      "Potiskum General Hospital": 275,
+      "Sani Abacha Specialist Hospital": 179,
+      "Nguru Federal Medical Centre": 101,
+      "Gashua General Hospital": 58,
+      "Geidam General Hospital": 25,
+      "Fika General Hospital": 19,
+      "Jakusko General Hospital": 11
+    },
+    "checks": [
+      {
+        "check": "Duplicate Patient IDs",
+        "total": 0,
+        "byFacility": {
+          "Fika General Hospital": 0,
+          "Gashua General Hospital": 0,
+          "Geidam General Hospital": 0,
+          "Jakusko General Hospital": 0,
+          "Nguru Federal Medical Centre": 0,
+          "Potiskum General Hospital": 0,
+          "Sani Abacha Specialist Hospital": 0
+        }
+      },
+      {
+        "check": "Records with invalid ART status",
+        "total": 3,
+        "byFacility": {
+          "Fika General Hospital": 0,
+          "Gashua General Hospital": 0,
+          "Geidam General Hospital": 0,
+          "Jakusko General Hospital": 0,
+          "Nguru Federal Medical Centre": 0,
+          "Potiskum General Hospital": 1,
+          "Sani Abacha Specialist Hospital": 2
+        }
+      },
+      {
+        "check": "Missing ART start date",
+        "total": 0,
+        "byFacility": {
+          "Fika General Hospital": 0,
+          "Gashua General Hospital": 0,
+          "Geidam General Hospital": 0,
+          "Jakusko General Hospital": 0,
+          "Nguru Federal Medical Centre": 0,
+          "Potiskum General Hospital": 0,
+          "Sani Abacha Specialist Hospital": 0
+        }
+      },
+      {
+        "check": "Missing sex",
+        "total": 0,
+        "byFacility": {
+          "Fika General Hospital": 0,
+          "Gashua General Hospital": 0,
+          "Geidam General Hospital": 0,
+          "Jakusko General Hospital": 0,
+          "Nguru Federal Medical Centre": 0,
+          "Potiskum General Hospital": 0,
+          "Sani Abacha Specialist Hospital": 0
+        }
+      },
+      {
+        "check": "Missing age and date of birth",
+        "total": 0,
+        "byFacility": {
+          "Fika General Hospital": 0,
+          "Gashua General Hospital": 0,
+          "Geidam General Hospital": 0,
+          "Jakusko General Hospital": 0,
+          "Nguru Federal Medical Centre": 0,
+          "Potiskum General Hospital": 0,
+          "Sani Abacha Specialist Hospital": 0
+        }
+      },
+      {
+        "check": "ART start date after last pickup",
+        "total": 0,
+        "byFacility": {
+          "Fika General Hospital": 0,
+          "Gashua General Hospital": 0,
+          "Geidam General Hospital": 0,
+          "Jakusko General Hospital": 0,
+          "Nguru Federal Medical Centre": 0,
+          "Potiskum General Hospital": 0,
+          "Sani Abacha Specialist Hospital": 0
+        }
+      },
+      {
+        "check": "ART start date in the future",
+        "total": 0,
+        "byFacility": {
+          "Fika General Hospital": 0,
+          "Gashua General Hospital": 0,
+          "Geidam General Hospital": 0,
+          "Jakusko General Hospital": 0,
+          "Nguru Federal Medical Centre": 0,
+          "Potiskum General Hospital": 0,
+          "Sani Abacha Specialist Hospital": 0
+        }
+      },
+      {
+        "check": "VL result date before sample collection",
+        "total": 21,
+        "byFacility": {
+          "Fika General Hospital": 2,
+          "Gashua General Hospital": 2,
+          "Geidam General Hospital": 4,
+          "Jakusko General Hospital": 0,
+          "Nguru Federal Medical Centre": 0,
+          "Potiskum General Hospital": 6,
+          "Sani Abacha Specialist Hospital": 7
+        }
+      },
+      {
+        "check": "VL sample collected, no result recorded",
+        "total": 9,
+        "byFacility": {
+          "Fika General Hospital": 0,
+          "Gashua General Hospital": 1,
+          "Geidam General Hospital": 0,
+          "Jakusko General Hospital": 0,
+          "Nguru Federal Medical Centre": 2,
+          "Potiskum General Hospital": 3,
+          "Sani Abacha Specialist Hospital": 3
+        }
+      },
+      {
+        "check": "Post-EAC VL text that could not be parsed",
+        "total": 1,
+        "byFacility": {
+          "Fika General Hospital": 0,
+          "Gashua General Hospital": 0,
+          "Geidam General Hospital": 1,
+          "Jakusko General Hospital": 0,
+          "Nguru Federal Medical Centre": 0,
+          "Potiskum General Hospital": 0,
+          "Sani Abacha Specialist Hospital": 0
+        }
+      },
+      {
+        "check": "EAC sessions recorded without an EAC start date",
+        "total": 2,
+        "byFacility": {
+          "Fika General Hospital": 0,
+          "Gashua General Hospital": 0,
+          "Geidam General Hospital": 0,
+          "Jakusko General Hospital": 0,
+          "Nguru Federal Medical Centre": 0,
+          "Potiskum General Hospital": 1,
+          "Sani Abacha Specialist Hospital": 1
+        }
+      },
+      {
+        "check": "Post-EAC VL taken without 3 documented EAC sessions",
+        "total": 41,
+        "byFacility": {
+          "Fika General Hospital": 5,
+          "Gashua General Hospital": 7,
+          "Geidam General Hospital": 0,
+          "Jakusko General Hospital": 0,
+          "Nguru Federal Medical Centre": 8,
+          "Potiskum General Hospital": 4,
+          "Sani Abacha Specialist Hospital": 17
+        }
+      },
+      {
+        "check": "EAC commenced but no sessions recorded",
+        "total": 0,
+        "byFacility": {
+          "Fika General Hospital": 0,
+          "Gashua General Hospital": 0,
+          "Geidam General Hospital": 0,
+          "Jakusko General Hospital": 0,
+          "Nguru Federal Medical Centre": 0,
+          "Potiskum General Hospital": 0,
+          "Sani Abacha Specialist Hospital": 0
+        }
+      }
+    ]
+  }
 }

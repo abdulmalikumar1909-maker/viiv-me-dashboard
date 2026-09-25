@@ -13,11 +13,14 @@ delete data.clients;
 
 // Keep queue counts, drop the patient IDs behind them.
 data.followUpQueues = (data.followUpQueues ?? []).map(({ patientIds, ...queue }) => queue);
+if (data.dataQuality?.checks) {
+  data.dataQuality.checks = data.dataQuality.checks.map(({ patientIds, ...check }) => check);
+}
 
 delete data.meta?.sourceFile;
 
 const text = JSON.stringify(data, null, 2);
-for (const field of ["patientId", "hospitalNumber", "caseManager"]) {
+for (const field of ["patientId", "patientIds", "hospitalNumber", "caseManager"]) {
   if (text.includes(`"${field}"`)) throw new Error(`Refusing to write: output still contains "${field}"`);
 }
 

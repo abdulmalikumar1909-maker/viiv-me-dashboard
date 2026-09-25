@@ -563,11 +563,20 @@ button:focus-visible {
   transition: width 0.4s ease;
 }
 
-/* ---------- Facility table (desktop) & cards (phone) ---------- */
+/* ---------- Tables ---------- */
 
-.table-wrap {
-  display: none;
+.data-table-wrap {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.panel + .panel {
+  margin-top: 12px;
+}
+
+/* The facility summary is a table on wide screens and cards on phones. */
+.wide-only {
+  display: none;
 }
 
 table {
@@ -585,7 +594,9 @@ td {
 }
 
 th:first-child,
-td:first-child {
+td:first-child,
+th.is-left,
+td.is-left {
   text-align: left;
 }
 
@@ -653,6 +664,336 @@ tfoot td {
   font-weight: 700;
 }
 
+/* ---------- Tabs ---------- */
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-top: 16px;
+  padding: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab {
+  flex: 1 0 auto;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--ink-2);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.tab:hover {
+  background: var(--surface-muted);
+}
+
+.tab.active {
+  background: var(--brand);
+  color: #fff;
+}
+
+.tab-private {
+  border: 1px dashed var(--warning-mark);
+}
+
+.tab-question {
+  display: none;
+  margin-left: auto;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--ink-3);
+}
+
+/* ---------- Data tables ---------- */
+
+.data-table td.is-left {
+  white-space: normal;
+  min-width: 120px;
+}
+
+/* ---------- Follow-up workload ---------- */
+
+.queue-list {
+  list-style: none;
+  margin: 0;
+  padding: 8px 16px 14px;
+  display: grid;
+  gap: 12px;
+}
+
+.queue-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px 12px;
+}
+
+.queue-label {
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.queue-count {
+  font-size: 14px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.queue-track {
+  grid-column: 1 / -1;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--surface-muted);
+}
+
+.queue-fill {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+  background: var(--accent);
+}
+
+.queue-warning .queue-fill { background: var(--warning-mark); }
+.queue-critical .queue-fill { background: var(--critical); }
+.queue-clear .queue-label,
+.queue-clear .queue-count { color: var(--ink-3); }
+
+/* ---------- Data quality ---------- */
+
+.bar-fill-warning {
+  background: var(--warning-mark);
+}
+
+.dq-table td.is-left {
+  min-width: 260px;
+}
+
+.dq-status {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: -5px;
+  border-radius: 50%;
+}
+
+.dq-status svg {
+  width: 13px;
+  height: 13px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.dq-status.is-clean { color: var(--good); background: var(--good-bg); }
+.dq-status.has-issues { color: var(--warning); background: var(--warning-bg); }
+
+.dq-total {
+  font-weight: 700;
+}
+
+.dq-hit {
+  font-weight: 700;
+  color: var(--warning);
+}
+
+.dq-zero {
+  color: var(--ink-3);
+}
+
+.funnel {
+  list-style: none;
+  margin: 0;
+  padding: 8px 16px 16px;
+  display: grid;
+  gap: 8px;
+}
+
+.funnel li {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--surface-muted);
+}
+
+.funnel li:last-child {
+  background: var(--accent-track);
+}
+
+.funnel-value {
+  min-width: 80px;
+  font-size: 18px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.funnel-label {
+  font-size: 13.5px;
+  color: var(--ink-2);
+}
+
+.empty-note {
+  margin: 0;
+  padding: 16px;
+  color: var(--ink-3);
+  font-size: 14px;
+}
+
+/* ---------- Client lists (local only) ---------- */
+
+.private-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px dashed var(--warning-mark);
+  background: var(--warning-bg);
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+
+.private-note svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: var(--warning);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+}
+
+.list-group + .list-group {
+  margin-top: 14px;
+}
+
+.list-group-title {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.chip.is-empty {
+  color: var(--ink-3);
+}
+
+.chip.active {
+  border-color: var(--brand);
+  background: var(--brand);
+  color: #fff;
+}
+
+.chip-count {
+  min-width: 22px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: var(--surface-muted);
+  color: var(--ink);
+  font-size: 12px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.chip.active .chip-count {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.section .chips + .panel,
+.list-group + .panel {
+  margin-top: 16px;
+}
+
+.list-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.list-actions input {
+  min-width: 0;
+  width: 180px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 13.5px;
+}
+
+.button {
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.client-table td,
+.client-table td.is-left {
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 /* ---------- Footer & loading ---------- */
 
 .footer {
@@ -706,6 +1047,10 @@ tfoot td {
 /* ---------- Larger screens ---------- */
 
 @media (min-width: 600px) {
+  .tab-question {
+    display: inline;
+  }
+
   .tiles {
     grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
     gap: 14px;
@@ -761,11 +1106,11 @@ tfoot td {
     font-size: 56px;
   }
 
-  .table-wrap {
+  .wide-only {
     display: block;
   }
 
-  .facility-cards {
+  .narrow-only {
     display: none;
   }
 }
