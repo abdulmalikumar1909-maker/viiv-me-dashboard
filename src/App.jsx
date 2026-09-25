@@ -128,7 +128,7 @@ if (!k) {
           </div>
         </div>
 
-        <div className="kpi-grid">
+        <div className="kpi-grid kpi-grid-fixed">
 
           <div className="card">
             <span>VL Eligible</span>
