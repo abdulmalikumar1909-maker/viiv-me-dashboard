@@ -313,8 +313,8 @@ function App() {
         <div className="brand">
           <img src="/AHNi_logo.png" alt="AHNi" className="logo" />
           <div>
-            <h1>ViiV M&amp;E Dashboard</h1>
-            <p>Adolescent HIV programme monitoring &amp; evaluation</p>
+            <h1>Lafiyan Matasa Dashboard</h1>
+            <p>Adolescent HIV programme monitoring &amp; evaluation · Yobe State</p>
           </div>
         </div>
         <div className="header-meta">
@@ -411,7 +411,8 @@ function App() {
       </Section>
 
       <footer className="footer">
-        <strong>ViiV M&amp;E Dashboard</strong>
+        <strong>Lafiyan Matasa</strong>
+        <span>Implemented by AHNi with support from ViiV Healthcare</span>
         <span>Data generated {formatDate(data.meta.generatedAt, true)}</span>
         <span>Aggregate figures only · no client-level data</span>
       </footer>
