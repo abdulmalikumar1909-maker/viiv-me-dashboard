@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-09-25T01:50:09",
+    "generatedAt": "2026-09-25T02:19:16",
     "fiscalYear": 2026,
     "periodStart": "2025-10-01",
     "periodEnd": "2026-09-30",
@@ -13,22 +13,22 @@
   },
   "kpis": {
     "totalClients": 665,
-    "active": 409,
+    "active": 410,
     "iit": 100,
     "iitInPeriod": 1,
-    "txMl": 16,
-    "vlEligible": 399,
-    "vlCovered": 399,
+    "txMl": 15,
+    "vlEligible": 400,
+    "vlCovered": 400,
     "vlCoverageRate": 100,
-    "suppressed": 355,
-    "suppressionRate": 89,
-    "undetectableRate": 60.9,
-    "unsuppressed": 44,
+    "suppressed": 359,
+    "suppressionRate": 89.8,
+    "undetectableRate": 61.5,
+    "unsuppressed": 41,
     "vlDue": 0,
     "vlPending": 0,
-    "eacRequired": 44,
-    "postEacVlDue": 6,
-    "failedEac": 2
+    "eacRequired": 41,
+    "postEacVlDue": 5,
+    "failedEac": 3
   },
   "indicators": [
     {
@@ -41,9 +41,9 @@
     {
       "Section": "Cohort",
       "Indicator": "Active on ART (TX_CURR)",
-      "Numerator": 409,
+      "Numerator": 410,
       "Denominator": 665,
-      "Percentage": 61.5
+      "Percentage": 61.7
     },
     {
       "Section": "Cohort",
@@ -76,142 +76,142 @@
     {
       "Section": "Cohort",
       "Indicator": "Stopped treatment",
-      "Numerator": 13,
+      "Numerator": 12,
       "Denominator": 665,
-      "Percentage": 2
+      "Percentage": 1.8
     },
     {
       "Section": "Cohort",
       "Indicator": "ART status changed since last report",
-      "Numerator": 8,
+      "Numerator": 7,
       "Denominator": 665,
-      "Percentage": 1.2
+      "Percentage": 1.1
     },
     {
       "Section": "Viral load",
       "Indicator": "Eligible for viral load",
-      "Numerator": 399,
-      "Denominator": 409,
+      "Numerator": 400,
+      "Denominator": 410,
       "Percentage": 97.6
     },
     {
       "Section": "Viral load",
       "Indicator": "Has a current VL result",
-      "Numerator": 399,
-      "Denominator": 399,
+      "Numerator": 400,
+      "Denominator": 400,
       "Percentage": 100
     },
     {
       "Section": "Viral load",
       "Indicator": "Suppressed (<1,000 c/ml)",
-      "Numerator": 355,
-      "Denominator": 399,
-      "Percentage": 89
+      "Numerator": 359,
+      "Denominator": 400,
+      "Percentage": 89.8
     },
     {
       "Section": "Viral load",
       "Indicator": "Undetectable (<50 c/ml)",
-      "Numerator": 243,
-      "Denominator": 399,
-      "Percentage": 60.9
+      "Numerator": 246,
+      "Denominator": 400,
+      "Percentage": 61.5
     },
     {
       "Section": "Viral load",
       "Indicator": "Low-level viraemia (50-999 c/ml)",
-      "Numerator": 112,
-      "Denominator": 399,
-      "Percentage": 28.1
+      "Numerator": 113,
+      "Denominator": 400,
+      "Percentage": 28.2
     },
     {
       "Section": "Viral load",
       "Indicator": "Unsuppressed (≥1,000 c/ml)",
-      "Numerator": 44,
-      "Denominator": 399,
-      "Percentage": 11
+      "Numerator": 41,
+      "Denominator": 400,
+      "Percentage": 10.2
     },
     {
       "Section": "Viral load",
       "Indicator": "High viraemia (≥100,000 c/ml)",
-      "Numerator": 16,
-      "Denominator": 399,
-      "Percentage": 4
+      "Numerator": 14,
+      "Denominator": 400,
+      "Percentage": 3.5
     },
     {
       "Section": "Viral load",
       "Indicator": "Due for viral load",
       "Numerator": 0,
-      "Denominator": 399,
+      "Denominator": 400,
       "Percentage": 0
     },
     {
       "Section": "Viral load",
       "Indicator": "Never tested",
       "Numerator": 0,
-      "Denominator": 399,
+      "Denominator": 400,
       "Percentage": 0
     },
     {
       "Section": "Viral load",
       "Indicator": "Result expired (>12 months)",
       "Numerator": 0,
-      "Denominator": 399,
+      "Denominator": 400,
       "Percentage": 0
     },
     {
       "Section": "Viral load",
       "Indicator": "Sample pending result",
       "Numerator": 0,
-      "Denominator": 399,
+      "Denominator": 400,
       "Percentage": 0
     },
     {
       "Section": "Viral load",
       "Indicator": "Result overdue (>30 days)",
       "Numerator": 0,
-      "Denominator": 399,
+      "Denominator": 400,
       "Percentage": 0
     },
     {
       "Section": "Viral load",
       "Indicator": "VL missing (no current result)",
       "Numerator": 0,
-      "Denominator": 399,
+      "Denominator": 400,
       "Percentage": 0
     },
     {
       "Section": "EAC",
       "Indicator": "Unsuppressed clients (EAC denominator)",
-      "Numerator": 44,
+      "Numerator": 41,
       "Denominator": null,
       "Percentage": null
     },
     {
       "Section": "EAC",
       "Indicator": "EAC started",
-      "Numerator": 43,
-      "Denominator": 44,
-      "Percentage": 97.7
+      "Numerator": 40,
+      "Denominator": 41,
+      "Percentage": 97.6
     },
     {
       "Section": "EAC",
       "Indicator": "EAC completed (3+ sessions)",
       "Numerator": 0,
-      "Denominator": 44,
+      "Denominator": 41,
       "Percentage": 0
     },
     {
       "Section": "EAC",
       "Indicator": "EAC still required",
-      "Numerator": 44,
-      "Denominator": 44,
+      "Numerator": 41,
+      "Denominator": 41,
       "Percentage": 100
     },
     {
       "Section": "EAC",
       "Indicator": "Post-EAC repeat VL due",
-      "Numerator": 6,
-      "Denominator": 44,
-      "Percentage": 13.6
+      "Numerator": 5,
+      "Denominator": 41,
+      "Percentage": 12.2
     },
     {
       "Section": "EAC",
@@ -223,30 +223,30 @@
     {
       "Section": "EAC",
       "Indicator": "Post-EAC result received",
-      "Numerator": 38,
+      "Numerator": 40,
       "Denominator": 43,
-      "Percentage": 88.4
+      "Percentage": 93
     },
     {
       "Section": "EAC",
       "Indicator": "Re-suppressed after EAC",
-      "Numerator": 36,
-      "Denominator": 38,
-      "Percentage": 94.7
+      "Numerator": 37,
+      "Denominator": 40,
+      "Percentage": 92.5
     },
     {
       "Section": "EAC",
       "Indicator": "Still unsuppressed after EAC",
-      "Numerator": 2,
-      "Denominator": 38,
-      "Percentage": 5.3
+      "Numerator": 3,
+      "Denominator": 40,
+      "Percentage": 7.5
     },
     {
       "Section": "TX_ML",
       "Indicator": "TX_ML (reporting period)",
-      "Numerator": 16,
+      "Numerator": 15,
       "Denominator": 665,
-      "Percentage": 2.4
+      "Percentage": 2.3
     }
   ],
   "byFacility": [
@@ -329,20 +329,20 @@
     {
       "Facility": "Nguru Federal Medical Centre",
       "Total clients": 101,
-      "Active": 54,
+      "Active": 55,
       "IIT": 31,
       "IIT this period": 0,
-      "VL eligible": 54,
-      "With current VL": 54,
-      "Suppressed": 50,
+      "VL eligible": 55,
+      "With current VL": 55,
+      "Suppressed": 51,
       "Unsuppressed": 4,
       "VL due": 0,
       "VL pending": 0,
       "EAC required": 4,
       "Post-EAC VL due": 0,
-      "TX_ML": 1,
+      "TX_ML": 0,
       "VL coverage %": 100,
-      "Suppression %": 92.6,
+      "Suppression %": 92.7,
       "IIT %": 30.7
     },
     {
@@ -353,15 +353,15 @@
       "IIT this period": 0,
       "VL eligible": 158,
       "With current VL": 158,
-      "Suppressed": 131,
-      "Unsuppressed": 27,
+      "Suppressed": 133,
+      "Unsuppressed": 25,
       "VL due": 0,
       "VL pending": 0,
-      "EAC required": 27,
-      "Post-EAC VL due": 4,
+      "EAC required": 25,
+      "Post-EAC VL due": 3,
       "TX_ML": 7,
       "VL coverage %": 100,
-      "Suppression %": 82.9,
+      "Suppression %": 84.2,
       "IIT %": 5.8
     },
     {
@@ -372,34 +372,34 @@
       "IIT this period": 0,
       "VL eligible": 113,
       "With current VL": 113,
-      "Suppressed": 104,
-      "Unsuppressed": 9,
+      "Suppressed": 105,
+      "Unsuppressed": 8,
       "VL due": 0,
       "VL pending": 0,
-      "EAC required": 9,
+      "EAC required": 8,
       "Post-EAC VL due": 0,
       "TX_ML": 6,
       "VL coverage %": 100,
-      "Suppression %": 92,
+      "Suppression %": 92.9,
       "IIT %": 23.2
     },
     {
       "Facility": "All",
       "Total clients": 665,
-      "Active": 409,
+      "Active": 410,
       "IIT": 100,
       "IIT this period": 1,
-      "VL eligible": 399,
-      "With current VL": 399,
-      "Suppressed": 355,
-      "Unsuppressed": 44,
+      "VL eligible": 400,
+      "With current VL": 400,
+      "Suppressed": 359,
+      "Unsuppressed": 41,
       "VL due": 0,
       "VL pending": 0,
-      "EAC required": 44,
-      "Post-EAC VL due": 6,
-      "TX_ML": 16,
+      "EAC required": 41,
+      "Post-EAC VL due": 5,
+      "TX_ML": 15,
       "VL coverage %": 100,
-      "Suppression %": 89,
+      "Suppression %": 89.8,
       "IIT %": 15
     }
   ],
@@ -431,15 +431,15 @@
       "IIT this period": 0,
       "VL eligible": 113,
       "With current VL": 113,
-      "Suppressed": 104,
-      "Unsuppressed": 9,
+      "Suppressed": 105,
+      "Unsuppressed": 8,
       "VL due": 0,
       "VL pending": 0,
-      "EAC required": 9,
+      "EAC required": 8,
       "Post-EAC VL due": 0,
       "TX_ML": 6,
       "VL coverage %": 100,
-      "Suppression %": 92,
+      "Suppression %": 92.9,
       "IIT %": 23.2
     },
     {
@@ -502,20 +502,20 @@
     {
       "LGA": "Nguru",
       "Total clients": 101,
-      "Active": 54,
+      "Active": 55,
       "IIT": 31,
       "IIT this period": 0,
-      "VL eligible": 54,
-      "With current VL": 54,
-      "Suppressed": 50,
+      "VL eligible": 55,
+      "With current VL": 55,
+      "Suppressed": 51,
       "Unsuppressed": 4,
       "VL due": 0,
       "VL pending": 0,
       "EAC required": 4,
       "Post-EAC VL due": 0,
-      "TX_ML": 1,
+      "TX_ML": 0,
       "VL coverage %": 100,
-      "Suppression %": 92.6,
+      "Suppression %": 92.7,
       "IIT %": 30.7
     },
     {
@@ -526,34 +526,34 @@
       "IIT this period": 0,
       "VL eligible": 158,
       "With current VL": 158,
-      "Suppressed": 131,
-      "Unsuppressed": 27,
+      "Suppressed": 133,
+      "Unsuppressed": 25,
       "VL due": 0,
       "VL pending": 0,
-      "EAC required": 27,
-      "Post-EAC VL due": 4,
+      "EAC required": 25,
+      "Post-EAC VL due": 3,
       "TX_ML": 7,
       "VL coverage %": 100,
-      "Suppression %": 82.9,
+      "Suppression %": 84.2,
       "IIT %": 5.8
     },
     {
       "LGA": "All",
       "Total clients": 665,
-      "Active": 409,
+      "Active": 410,
       "IIT": 100,
       "IIT this period": 1,
-      "VL eligible": 399,
-      "With current VL": 399,
-      "Suppressed": 355,
-      "Unsuppressed": 44,
+      "VL eligible": 400,
+      "With current VL": 400,
+      "Suppressed": 359,
+      "Unsuppressed": 41,
       "VL due": 0,
       "VL pending": 0,
-      "EAC required": 44,
-      "Post-EAC VL due": 6,
-      "TX_ML": 16,
+      "EAC required": 41,
+      "Post-EAC VL due": 5,
+      "TX_ML": 15,
       "VL coverage %": 100,
-      "Suppression %": 89,
+      "Suppression %": 89.8,
       "IIT %": 15
     }
   ],
@@ -566,53 +566,53 @@
       "IIT this period": 1,
       "VL eligible": 203,
       "With current VL": 203,
-      "Suppressed": 182,
-      "Unsuppressed": 21,
+      "Suppressed": 184,
+      "Unsuppressed": 19,
       "VL due": 0,
       "VL pending": 0,
-      "EAC required": 21,
-      "Post-EAC VL due": 3,
+      "EAC required": 19,
+      "Post-EAC VL due": 2,
       "TX_ML": 9,
       "VL coverage %": 100,
-      "Suppression %": 89.7,
+      "Suppression %": 90.6,
       "IIT %": 13.7
     },
     {
       "Sex": "Male",
       "Total clients": 323,
-      "Active": 196,
+      "Active": 197,
       "IIT": 53,
       "IIT this period": 0,
-      "VL eligible": 196,
-      "With current VL": 196,
-      "Suppressed": 173,
-      "Unsuppressed": 23,
+      "VL eligible": 197,
+      "With current VL": 197,
+      "Suppressed": 175,
+      "Unsuppressed": 22,
       "VL due": 0,
       "VL pending": 0,
-      "EAC required": 23,
+      "EAC required": 22,
       "Post-EAC VL due": 3,
-      "TX_ML": 7,
+      "TX_ML": 6,
       "VL coverage %": 100,
-      "Suppression %": 88.3,
+      "Suppression %": 88.8,
       "IIT %": 16.4
     },
     {
       "Sex": "All",
       "Total clients": 665,
-      "Active": 409,
+      "Active": 410,
       "IIT": 100,
       "IIT this period": 1,
-      "VL eligible": 399,
-      "With current VL": 399,
-      "Suppressed": 355,
-      "Unsuppressed": 44,
+      "VL eligible": 400,
+      "With current VL": 400,
+      "Suppressed": 359,
+      "Unsuppressed": 41,
       "VL due": 0,
       "VL pending": 0,
-      "EAC required": 44,
-      "Post-EAC VL due": 6,
-      "TX_ML": 16,
+      "EAC required": 41,
+      "Post-EAC VL due": 5,
+      "TX_ML": 15,
       "VL coverage %": 100,
-      "Suppression %": 89,
+      "Suppression %": 89.8,
       "IIT %": 15
     }
   ],
@@ -620,39 +620,39 @@
     {
       "Age Group": "10-19",
       "Total clients": 665,
-      "Active": 409,
+      "Active": 410,
       "IIT": 100,
       "IIT this period": 1,
-      "VL eligible": 399,
-      "With current VL": 399,
-      "Suppressed": 355,
-      "Unsuppressed": 44,
+      "VL eligible": 400,
+      "With current VL": 400,
+      "Suppressed": 359,
+      "Unsuppressed": 41,
       "VL due": 0,
       "VL pending": 0,
-      "EAC required": 44,
-      "Post-EAC VL due": 6,
-      "TX_ML": 16,
+      "EAC required": 41,
+      "Post-EAC VL due": 5,
+      "TX_ML": 15,
       "VL coverage %": 100,
-      "Suppression %": 89,
+      "Suppression %": 89.8,
       "IIT %": 15
     },
     {
       "Age Group": "All",
       "Total clients": 665,
-      "Active": 409,
+      "Active": 410,
       "IIT": 100,
       "IIT this period": 1,
-      "VL eligible": 399,
-      "With current VL": 399,
-      "Suppressed": 355,
-      "Unsuppressed": 44,
+      "VL eligible": 400,
+      "With current VL": 400,
+      "Suppressed": 359,
+      "Unsuppressed": 41,
       "VL due": 0,
       "VL pending": 0,
-      "EAC required": 44,
-      "Post-EAC VL due": 6,
-      "TX_ML": 16,
+      "EAC required": 41,
+      "Post-EAC VL due": 5,
+      "TX_ML": 15,
       "VL coverage %": 100,
-      "Suppression %": 89,
+      "Suppression %": 89.8,
       "IIT %": 15
     }
   ],
@@ -660,26 +660,26 @@
     {
       "Reason": "Transferred out",
       "Clients": 9,
-      "% of TX_ML": 56.2
-    },
-    {
-      "Reason": "Refused / stopped treatment",
-      "Clients": 3,
-      "% of TX_ML": 18.8
+      "% of TX_ML": 60
     },
     {
       "Reason": "Died",
       "Clients": 3,
-      "% of TX_ML": 18.8
+      "% of TX_ML": 20
+    },
+    {
+      "Reason": "Refused / stopped treatment",
+      "Clients": 2,
+      "% of TX_ML": 13.3
     },
     {
       "Reason": "IIT after 3+ months on ART",
       "Clients": 1,
-      "% of TX_ML": 6.2
+      "% of TX_ML": 6.7
     },
     {
       "Reason": "All TX_ML",
-      "Clients": 16,
+      "Clients": 15,
       "% of TX_ML": 100
     }
   ],
@@ -696,11 +696,6 @@
     },
     {
       "Previous status": "Active",
-      "Current status": "Stopped Treatment",
-      "Clients": 1
-    },
-    {
-      "Previous status": "Active",
       "Current status": "Died",
       "Clients": 1
     }
@@ -708,7 +703,7 @@
   "artStatusDistribution": [
     {
       "status": "Active",
-      "clients": 409
+      "clients": 410
     },
     {
       "status": "IIT",
@@ -724,21 +719,21 @@
     },
     {
       "status": "Stopped Treatment",
-      "clients": 13
+      "clients": 12
     }
   ],
   "vlStatusDistribution": [
     {
       "status": "Suppressed",
-      "clients": 355
+      "clients": 359
     },
     {
       "status": "Not eligible",
-      "clients": 266
+      "clients": 265
     },
     {
       "status": "Unsuppressed",
-      "clients": 44
+      "clients": 41
     }
   ],
   "followUpQueues": [
@@ -760,22 +755,22 @@
     {
       "key": "unsuppressed",
       "label": "Unsuppressed",
-      "count": 44
+      "count": 41
     },
     {
       "key": "eacRequired",
       "label": "EAC required",
-      "count": 44
+      "count": 41
     },
     {
       "key": "postEacVlDue",
       "label": "Post-EAC VL due",
-      "count": 6
+      "count": 5
     },
     {
       "key": "failedEac",
       "label": "Unsuppressed after EAC",
-      "count": 2
+      "count": 3
     }
   ]
 }
