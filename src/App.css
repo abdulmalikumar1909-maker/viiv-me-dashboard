@@ -979,6 +979,106 @@ tfoot td {
   cursor: not-allowed;
 }
 
+.private-note .button-quiet {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.button-quiet {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--border);
+}
+
+/* ---------- Password screen ---------- */
+
+.gate {
+  display: grid;
+  gap: 10px;
+  max-width: 440px;
+  margin: 8px auto 0;
+  padding: 28px 24px;
+  border-radius: 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.gate-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 4px;
+  border-radius: 50%;
+  background: var(--accent-track);
+  color: var(--brand);
+}
+
+.gate-icon svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
+.gate h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.gate p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.gate label {
+  margin-top: 8px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.gate input {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+}
+
+.gate .button {
+  padding: 12px 16px;
+  font-size: 15px;
+}
+
+.gate-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--critical) !important;
+  font-weight: 600;
+}
+
+.gate-error svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+}
+
 .client-table td,
 .client-table td.is-left {
   white-space: nowrap;

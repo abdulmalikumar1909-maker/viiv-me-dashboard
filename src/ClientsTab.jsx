@@ -2,8 +2,9 @@ import { useMemo, useState } from "react";
 import { formatDate, formatNumber } from "./format.js";
 import { Panel, Section, StatusIcon } from "./ui.jsx";
 
-// Local-only tab: reads the patient-level file from data-private through the
-// dev server (see vite.config.js). It never appears on the public site.
+// Patient-level lists. The data arrives either from data-private on the M&E
+// computer, or from api/clients.js after a password check (already limited
+// to the signed-in facility).
 
 const COLUMNS = [
   { key: "hospitalNumber", label: "Hospital no." },
@@ -42,7 +43,7 @@ function downloadCsv(filename, clients) {
   URL.revokeObjectURL(url);
 }
 
-export default function ClientsTab({ privateData, selected }) {
+export default function ClientsTab({ privateData, selected, signedInAs, onLock }) {
   const allLists = useMemo(() => {
     const followUp = (privateData.followUpQueues || []).map((q) => ({
       id: `q-${q.key}`,
@@ -96,9 +97,15 @@ export default function ClientsTab({ privateData, selected }) {
       <div className="private-note" role="note">
         <StatusIcon tone="warning" />
         <span>
-          <strong>Patient-level data, on this computer only.</strong> This tab never appears on the public website.
-          Share exported lists only with the facility teams who follow these clients up.
+          <strong>Patient information.</strong>{" "}
+          {signedInAs ? `Signed in as ${signedInAs}. Lists lock again after 30 minutes. ` : "Opened on the M&E computer. "}
+          Share exported lists only with the facility team that follows these clients up.
         </span>
+        {onLock && (
+          <button className="button button-quiet" onClick={onLock}>
+            Lock
+          </button>
+        )}
       </div>
 
       <Section title="Clients needing action" subtitle={selected ? selected : "All facilities"}>

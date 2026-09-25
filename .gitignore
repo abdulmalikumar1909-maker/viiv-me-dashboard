@@ -25,3 +25,6 @@ dist-ssr
 
 # Patient-level source data - never commit or publish
 data-private/
+
+# Local secrets for testing the protected client lists
+.env.local

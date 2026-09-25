@@ -140,12 +140,11 @@ export default function DataQualityTab({ data, facilities, selected, selectedFac
             suffix={` of ${checks.length}`}
             tone={failing.length ? undefined : "good"}
           />
-          <Tile label="Issues found" value={issues} tone={issues ? "warning" : "good"} note="A record can fail more than one check" />
           <Tile
-            label="Invalid records excluded"
-            value={excluded}
-            tone={excluded ? "warning" : undefined}
-            note="Not counted in any indicator"
+            label="Issues found"
+            value={issues}
+            tone={issues ? "warning" : "good"}
+            note="Recording errors for facilities to correct in the EMR, added up across all checks. One client can have more than one."
           />
         </div>
       </Section>

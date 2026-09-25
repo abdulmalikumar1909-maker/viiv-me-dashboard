@@ -32,7 +32,7 @@ function FollowUpWorkload({ k }) {
   const rows = QUEUES.filter((q) => k[q.key] !== null && k[q.key] !== undefined);
   const max = Math.max(1, ...rows.map((q) => k[q.key]));
   return (
-    <Panel title="Follow-up workload" subtitle="Clients in each action queue. The client lists are on the M&E computer only.">
+    <Panel title="Follow-up workload" subtitle="Clients in each action queue. The names behind each number are on the Clients needing action tab (password required).">
       <ul className="queue-list">
         {rows.map((q) => (
           <li key={q.key} className={k[q.key] ? `queue-${q.tone}` : "queue-clear"}>
