@@ -9,8 +9,8 @@
   --ink: #0f1f33;
   --ink-2: #4a5568;
   --ink-3: #7c8797;
-  --brand: #0b3d78;
-  --brand-2: #1466b8;
+  --brand: #8e1616;
+  --brand-2: #d0342c;
   --accent: #2a78d6;
   --accent-track: #dbe8f8;
   --good: #0a7d0a;
@@ -104,9 +104,9 @@ select {
   border-radius: 20px;
   color: #fff;
   background:
-    radial-gradient(circle at 90% -20%, rgba(92, 170, 255, 0.45), transparent 55%),
+    radial-gradient(circle at 90% -20%, rgba(255, 140, 120, 0.4), transparent 55%),
     linear-gradient(135deg, var(--brand), var(--brand-2));
-  box-shadow: 0 12px 30px rgba(11, 61, 120, 0.25);
+  box-shadow: 0 12px 30px rgba(142, 22, 22, 0.25);
 }
 
 .brand {
