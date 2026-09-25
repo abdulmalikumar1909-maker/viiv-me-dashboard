@@ -31,6 +31,7 @@ function facilityKpis(row) {
   return {
     totalClients: row["Total clients"],
     active: row.Active,
+    txNew: row.TX_NEW,
     iit: row.IIT,
     iitInPeriod: row["IIT this period"],
     txMl: row.TX_ML,
@@ -190,6 +191,7 @@ function FacilityTable({ facilities, total }) {
   const columns = [
     ["Total clients", "Total"],
     ["Active", "Active"],
+    ["TX_NEW", "TX_NEW"],
     ["IIT", "IIT"],
     ["VL coverage %", "VL coverage", "%"],
     ["Suppression %", "Suppression", "%"],
@@ -385,8 +387,14 @@ function App() {
         </div>
       </Section>
 
-      <Section title="Treatment retention" subtitle="Interruptions and clients leaving treatment">
+      <Section title="Treatment & retention" subtitle="New clients, interruptions and clients leaving treatment">
         <div className="tiles">
+          <Tile
+            label="New on ART (TX_NEW)"
+            value={k.txNew}
+            tone={k.txNew ? "good" : undefined}
+            note={`ART start in the last ${data.kpis.txNewMonths ?? 6} months`}
+          />
           <Tile label="Total IIT" value={k.iit} tone="warning" />
           <Tile label="IIT this period" value={k.iitInPeriod} tone={k.iitInPeriod ? "critical" : undefined} />
           <Tile label="TX_ML" value={k.txMl} note="Left treatment this FY" />

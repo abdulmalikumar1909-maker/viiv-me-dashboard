@@ -154,13 +154,13 @@
   <header>
     <span class="eyebrow">Lafiyan Matasa · M&amp;E</span>
     <h1>How a RADET becomes the live dashboard</h1>
-    <p>You drop one file into a folder. Everything after that runs by itself, and patient-level data never leaves your computer.</p>
+    <p>The watcher collects each new combined RADET from Azure, keeps only the programme cohort, and publishes the totals. Patient-level data never leaves your computer.</p>
   </header>
 
   <figure>
     <div class="scroll">
       <svg class="flow" viewBox="0 0 1040 525" role="img"
-        aria-label="Data flow: a RADET export is dropped into RADET_inbox; the watcher runs the analysis, which writes the Excel report and the full patient data on the computer; the sanitizer strips client records and pushes aggregate figures only to GitHub, which triggers Netlify to rebuild the public dashboard.">
+        aria-label="Data flow: the watcher downloads the newest RADET from Azure Blob Storage into RADET_inbox when its ETag changes (or you drop one in by hand); the watcher runs the analysis, which keeps only Yobe clients aged 10 to 19 in the 7 supported facilities and writes the Excel report and the full patient data on the computer; the sanitizer strips client records and pushes aggregate figures only to GitHub, which triggers Netlify to rebuild the public dashboard.">
         <defs>
           <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
             <path class="head" d="M0,0 L10,5 L0,10 z" />
@@ -178,9 +178,9 @@
 
         <!-- Row 1 -->
         <rect class="box you" x="30" y="60" width="140" height="72" rx="10" />
-        <text class="t" x="100" y="85" text-anchor="middle">RADET export</text>
-        <text class="s" x="100" y="103" text-anchor="middle">from NDR, any name</text>
-        <text class="m" x="100" y="119" text-anchor="middle">.xlsx</text>
+        <text class="t" x="100" y="85" text-anchor="middle">Manual drop</text>
+        <text class="s" x="100" y="103" text-anchor="middle">optional backup</text>
+        <text class="m" x="100" y="119" text-anchor="middle">any .xlsx name</text>
 
         <rect class="box" x="240" y="60" width="140" height="72" rx="10" />
         <text class="t" x="310" y="85" text-anchor="middle">Inbox folder</text>
@@ -195,7 +195,7 @@
         <rect class="box" x="660" y="60" width="140" height="72" rx="10" />
         <text class="t" x="730" y="85" text-anchor="middle">M&amp;E analysis</text>
         <text class="m" x="730" y="103" text-anchor="middle">run_analysis.py</text>
-        <text class="s" x="730" y="119" text-anchor="middle">cleans &amp; calculates</text>
+        <text class="s" x="730" y="119" text-anchor="middle">Yobe · 10–19 · 7 sites</text>
 
         <rect class="box private" x="870" y="60" width="140" height="72" rx="10" />
         <text class="t" x="940" y="85" text-anchor="middle">Full patient data</text>
@@ -272,6 +272,15 @@
         <text class="s" x="310" y="453" text-anchor="middle">phone or computer</text>
         <text class="s" x="310" y="469" text-anchor="middle">no login needed</text>
 
+        <rect class="box you" x="30" y="410" width="140" height="72" rx="10" />
+        <text class="t" x="100" y="435" text-anchor="middle">Azure Blob Storage</text>
+        <text class="m" x="100" y="453" text-anchor="middle">combine-radets-xls</text>
+        <text class="s" x="100" y="469" text-anchor="middle">dated folders, all states</text>
+
+        <path class="edge hot" d="M100,410 V330 H310 V134" marker-end="url(#ah-hot)" />
+        <text class="el hot" x="302" y="214" text-anchor="end">checked every 15 min;</text>
+        <text class="el hot" x="302" y="228" text-anchor="end">downloads on a new ETag</text>
+
         <!-- Row 3 edges -->
         <line class="edge" x1="870" y1="446" x2="802" y2="446" marker-end="url(#ah)" />
         <text class="el" x="835" y="424" text-anchor="middle">triggers</text>
@@ -285,31 +294,32 @@
         <text class="el" x="415" y="437" text-anchor="middle">in browser</text>
       </svg>
     </div>
-    <figcaption>Only one arrow leaves your computer: the push of aggregate figures to GitHub. The full patient data, the Excel report and the RADET files all stay local. From dropping the file to the site updating takes about two minutes.</figcaption>
+    <figcaption>Two arrows cross the line between your computer and the internet. The combined RADET comes in from Azure, and only aggregate figures go out to GitHub. The full patient data, the Excel report and the downloaded RADETs stay local. A new upload reaches the live site within about 20 minutes: up to 15 for the next check, then a few for the download, analysis and rebuild.</figcaption>
   </figure>
 
   <section class="cards" aria-label="Details">
     <div class="card">
       <h2>Your part</h2>
-      <p>Save the new RADET export into <code>C:\Users\user\ViiV_Python_M&amp;E\RADET_inbox</code>. Any file name works, as long as it is <code>.xlsx</code>. If you drop several at once, only the newest is used.</p>
+      <p>Nothing day to day, once <code>blob_settings.json</code> holds the storage connection string. As a backup you can still save a RADET into <code>C:\Users\user\ViiV_Python_M&amp;E\RADET_inbox</code> yourself; any <code>.xlsx</code> name works.</p>
     </div>
     <div class="card">
       <h2>What runs automatically</h2>
       <ul>
-        <li>The watcher waits until the file has finished copying.</li>
-        <li>The analysis builds the indicators and the Excel report.</li>
+        <li>Every 15 minutes the watcher asks Azure for the newest RADET and downloads it only if its ETag has changed.</li>
+        <li>The analysis keeps State = Yobe, ages 10–19 and the 7 supported facilities, and drops every other row.</li>
+        <li>It then builds the indicators and the Excel report.</li>
         <li>The sanitizer strips patient records, then the result is pushed.</li>
         <li>Netlify rebuilds the site and open dashboards pick up the new numbers.</li>
       </ul>
     </div>
     <div class="card private">
       <h2>What stays private</h2>
-      <p>Client records, hospital numbers, patient IDs and case manager names stay in <code>data-private\</code>. That folder is excluded from git, and the sanitizer refuses to publish if any of those fields slip through.</p>
+      <p>Client records, hospital numbers, patient IDs and case manager names stay in <code>data-private\</code>. That folder is excluded from git, and the sanitizer refuses to publish if any of those fields slip through. The Azure connection string stays in <code>blob_settings.json</code> on this computer.</p>
     </div>
     <div class="card">
       <h2>If the site doesn't update</h2>
       <ul>
-        <li>Open <code>watch_radet.log</code> to see which step failed.</li>
+        <li>Open <code>watch_radet.log</code> to see which step failed. "Azure check failed" points to the connection string or the network.</li>
         <li>A file in <code>RADET_inbox\failed\</code> means the analysis could not read it.</li>
         <li>No Python window in the taskbar means the watcher isn't running. Start <strong>ViiV RADET Watcher</strong> from the Startup folder.</li>
       </ul>
