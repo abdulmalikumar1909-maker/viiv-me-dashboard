@@ -4,6 +4,8 @@ import "./App.css";
 // UNAIDS 95-95-95: the programme benchmark for VL coverage and suppression.
 const TARGET = 95;
 const ALL = "All Facilities";
+// RADETs arrive daily; older data than this means the update pipeline has stopped.
+const STALE_AFTER_DAYS = 2;
 
 const FACILITY_METRICS = [
   { key: "Suppression %", label: "Suppression", higherIsBetter: true },
@@ -273,6 +275,8 @@ function FacilityTable({ facilities, total }) {
 function App() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(false);
+  // When the data was last fetched; used to spot a dashboard that has stopped updating.
+  const [checkedAt, setCheckedAt] = useState(() => Date.now());
   const [selectedFacility, setSelectedFacility] = useState(ALL);
 
   useEffect(() => {
@@ -280,6 +284,7 @@ function App() {
       try {
         const response = await fetch(`/data/me_data.json?t=${Date.now()}`);
         setData(await response.json());
+        setCheckedAt(Date.now());
         setError(false);
       } catch (err) {
         console.error("Error loading dashboard data:", err);
@@ -308,6 +313,8 @@ function App() {
   const selected = facilities.find((f) => f.Facility === selectedFacility);
   const k = selected ? facilityKpis(selected) : data.kpis;
   const scope = selected ? selected.Facility : "All facilities";
+  const ageDays = (checkedAt - new Date(data.meta.generatedAt).getTime()) / 86_400_000;
+  const isStale = ageDays > STALE_AFTER_DAYS;
 
   return (
     <div className="dashboard">
@@ -324,12 +331,23 @@ function App() {
           <span className="pill">
             {formatDate(data.meta.periodStart)} – {formatDate(data.meta.periodEnd)}
           </span>
-          <span className="pill pill-live">
+          <span className={`pill pill-live ${isStale ? "is-stale" : ""}`}>
             <span className="status-dot" />
             Updated {formatDate(data.meta.generatedAt, true)}
           </span>
         </div>
       </header>
+
+      {isStale && (
+        <div className="stale-banner" role="status">
+          <StatusIcon tone="warning" />
+          <span>
+            <strong>These figures may be out of date.</strong> The data was last refreshed{" "}
+            {Math.floor(ageDays)} days ago, on {formatDate(data.meta.generatedAt, true)}. New RADETs are
+            normally published within a day.
+          </span>
+        </div>
+      )}
 
       <div className="filter-bar">
         <label htmlFor="facility">Facility</label>
