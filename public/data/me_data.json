@@ -1,0 +1,800 @@
+{
+  "meta": {
+    "generatedAt": "2026-09-23T17:37:09",
+    "fiscalYear": 2026,
+    "periodStart": "2025-10-01",
+    "periodEnd": "2026-09-30",
+    "referenceDate": "2026-09-23",
+    "suppressionThreshold": 1000,
+    "undetectableThreshold": 50,
+    "eacSessionsRequired": 3,
+    "vlValidityMonths": 12,
+    "recordsExcluded": 3
+  },
+  "kpis": {
+    "totalClients": 665,
+    "active": 409,
+    "iit": 100,
+    "iitInPeriod": 1,
+    "txMl": 16,
+    "vlEligible": 399,
+    "vlCovered": 399,
+    "vlCoverageRate": 100,
+    "suppressed": 355,
+    "suppressionRate": 89,
+    "undetectableRate": 60.9,
+    "unsuppressed": 44,
+    "vlDue": 0,
+    "vlPending": 0,
+    "eacRequired": 44,
+    "postEacVlDue": 6,
+    "failedEac": 2
+  },
+  "indicators": [
+    {
+      "Section": "Cohort",
+      "Indicator": "Valid client records",
+      "Numerator": 665,
+      "Denominator": null,
+      "Percentage": null
+    },
+    {
+      "Section": "Cohort",
+      "Indicator": "Active on ART (TX_CURR)",
+      "Numerator": 409,
+      "Denominator": 665,
+      "Percentage": 61.5
+    },
+    {
+      "Section": "Cohort",
+      "Indicator": "Interrupted treatment (IIT)",
+      "Numerator": 100,
+      "Denominator": 665,
+      "Percentage": 15
+    },
+    {
+      "Section": "Cohort",
+      "Indicator": "IIT during reporting period",
+      "Numerator": 1,
+      "Denominator": 665,
+      "Percentage": 0.2
+    },
+    {
+      "Section": "Cohort",
+      "Indicator": "Died",
+      "Numerator": 73,
+      "Denominator": 665,
+      "Percentage": 11
+    },
+    {
+      "Section": "Cohort",
+      "Indicator": "Transferred out",
+      "Numerator": 70,
+      "Denominator": 665,
+      "Percentage": 10.5
+    },
+    {
+      "Section": "Cohort",
+      "Indicator": "Stopped treatment",
+      "Numerator": 13,
+      "Denominator": 665,
+      "Percentage": 2
+    },
+    {
+      "Section": "Cohort",
+      "Indicator": "ART status changed since last report",
+      "Numerator": 8,
+      "Denominator": 665,
+      "Percentage": 1.2
+    },
+    {
+      "Section": "Viral load",
+      "Indicator": "Eligible for viral load",
+      "Numerator": 399,
+      "Denominator": 409,
+      "Percentage": 97.6
+    },
+    {
+      "Section": "Viral load",
+      "Indicator": "Has a current VL result",
+      "Numerator": 399,
+      "Denominator": 399,
+      "Percentage": 100
+    },
+    {
+      "Section": "Viral load",
+      "Indicator": "Suppressed (<1,000 c/ml)",
+      "Numerator": 355,
+      "Denominator": 399,
+      "Percentage": 89
+    },
+    {
+      "Section": "Viral load",
+      "Indicator": "Undetectable (<50 c/ml)",
+      "Numerator": 243,
+      "Denominator": 399,
+      "Percentage": 60.9
+    },
+    {
+      "Section": "Viral load",
+      "Indicator": "Low-level viraemia (50-999 c/ml)",
+      "Numerator": 112,
+      "Denominator": 399,
+      "Percentage": 28.1
+    },
+    {
+      "Section": "Viral load",
+      "Indicator": "Unsuppressed (≥1,000 c/ml)",
+      "Numerator": 44,
+      "Denominator": 399,
+      "Percentage": 11
+    },
+    {
+      "Section": "Viral load",
+      "Indicator": "High viraemia (≥100,000 c/ml)",
+      "Numerator": 16,
+      "Denominator": 399,
+      "Percentage": 4
+    },
+    {
+      "Section": "Viral load",
+      "Indicator": "Due for viral load",
+      "Numerator": 0,
+      "Denominator": 399,
+      "Percentage": 0
+    },
+    {
+      "Section": "Viral load",
+      "Indicator": "Never tested",
+      "Numerator": 0,
+      "Denominator": 399,
+      "Percentage": 0
+    },
+    {
+      "Section": "Viral load",
+      "Indicator": "Result expired (>12 months)",
+      "Numerator": 0,
+      "Denominator": 399,
+      "Percentage": 0
+    },
+    {
+      "Section": "Viral load",
+      "Indicator": "Sample pending result",
+      "Numerator": 0,
+      "Denominator": 399,
+      "Percentage": 0
+    },
+    {
+      "Section": "Viral load",
+      "Indicator": "Result overdue (>30 days)",
+      "Numerator": 0,
+      "Denominator": 399,
+      "Percentage": 0
+    },
+    {
+      "Section": "Viral load",
+      "Indicator": "VL missing (no current result)",
+      "Numerator": 0,
+      "Denominator": 399,
+      "Percentage": 0
+    },
+    {
+      "Section": "EAC",
+      "Indicator": "Unsuppressed clients (EAC denominator)",
+      "Numerator": 44,
+      "Denominator": null,
+      "Percentage": null
+    },
+    {
+      "Section": "EAC",
+      "Indicator": "EAC started",
+      "Numerator": 43,
+      "Denominator": 44,
+      "Percentage": 97.7
+    },
+    {
+      "Section": "EAC",
+      "Indicator": "EAC completed (3+ sessions)",
+      "Numerator": 0,
+      "Denominator": 44,
+      "Percentage": 0
+    },
+    {
+      "Section": "EAC",
+      "Indicator": "EAC still required",
+      "Numerator": 44,
+      "Denominator": 44,
+      "Percentage": 100
+    },
+    {
+      "Section": "EAC",
+      "Indicator": "Post-EAC repeat VL due",
+      "Numerator": 6,
+      "Denominator": 44,
+      "Percentage": 13.6
+    },
+    {
+      "Section": "EAC",
+      "Indicator": "Post-EAC sample collected",
+      "Numerator": 43,
+      "Denominator": 665,
+      "Percentage": 6.5
+    },
+    {
+      "Section": "EAC",
+      "Indicator": "Post-EAC result received",
+      "Numerator": 38,
+      "Denominator": 43,
+      "Percentage": 88.4
+    },
+    {
+      "Section": "EAC",
+      "Indicator": "Re-suppressed after EAC",
+      "Numerator": 36,
+      "Denominator": 38,
+      "Percentage": 94.7
+    },
+    {
+      "Section": "EAC",
+      "Indicator": "Still unsuppressed after EAC",
+      "Numerator": 2,
+      "Denominator": 38,
+      "Percentage": 5.3
+    },
+    {
+      "Section": "TX_ML",
+      "Indicator": "TX_ML (reporting period)",
+      "Numerator": 16,
+      "Denominator": 665,
+      "Percentage": 2.4
+    }
+  ],
+  "byFacility": [
+    {
+      "Facility": "Fika General Hospital",
+      "Total clients": 19,
+      "Active": 18,
+      "IIT": 0,
+      "IIT this period": 0,
+      "VL eligible": 18,
+      "With current VL": 18,
+      "Suppressed": 16,
+      "Unsuppressed": 2,
+      "VL due": 0,
+      "VL pending": 0,
+      "EAC required": 2,
+      "Post-EAC VL due": 1,
+      "TX_ML": 0,
+      "VL coverage %": 100,
+      "Suppression %": 88.9,
+      "IIT %": 0
+    },
+    {
+      "Facility": "Gashua General Hospital",
+      "Total clients": 58,
+      "Active": 32,
+      "IIT": 12,
+      "IIT this period": 1,
+      "VL eligible": 31,
+      "With current VL": 31,
+      "Suppressed": 31,
+      "Unsuppressed": 0,
+      "VL due": 0,
+      "VL pending": 0,
+      "EAC required": 0,
+      "Post-EAC VL due": 0,
+      "TX_ML": 2,
+      "VL coverage %": 100,
+      "Suppression %": 100,
+      "IIT %": 20.7
+    },
+    {
+      "Facility": "Geidam General Hospital",
+      "Total clients": 25,
+      "Active": 17,
+      "IIT": 0,
+      "IIT this period": 0,
+      "VL eligible": 17,
+      "With current VL": 17,
+      "Suppressed": 15,
+      "Unsuppressed": 2,
+      "VL due": 0,
+      "VL pending": 0,
+      "EAC required": 2,
+      "Post-EAC VL due": 1,
+      "TX_ML": 0,
+      "VL coverage %": 100,
+      "Suppression %": 88.2,
+      "IIT %": 0
+    },
+    {
+      "Facility": "Jakusko General Hospital",
+      "Total clients": 11,
+      "Active": 9,
+      "IIT": 0,
+      "IIT this period": 0,
+      "VL eligible": 8,
+      "With current VL": 8,
+      "Suppressed": 8,
+      "Unsuppressed": 0,
+      "VL due": 0,
+      "VL pending": 0,
+      "EAC required": 0,
+      "Post-EAC VL due": 0,
+      "TX_ML": 0,
+      "VL coverage %": 100,
+      "Suppression %": 100,
+      "IIT %": 0
+    },
+    {
+      "Facility": "Nguru Federal Medical Centre",
+      "Total clients": 101,
+      "Active": 54,
+      "IIT": 31,
+      "IIT this period": 0,
+      "VL eligible": 54,
+      "With current VL": 54,
+      "Suppressed": 50,
+      "Unsuppressed": 4,
+      "VL due": 0,
+      "VL pending": 0,
+      "EAC required": 4,
+      "Post-EAC VL due": 0,
+      "TX_ML": 1,
+      "VL coverage %": 100,
+      "Suppression %": 92.6,
+      "IIT %": 30.7
+    },
+    {
+      "Facility": "Potiskum General Hospital",
+      "Total clients": 274,
+      "Active": 165,
+      "IIT": 16,
+      "IIT this period": 0,
+      "VL eligible": 158,
+      "With current VL": 158,
+      "Suppressed": 131,
+      "Unsuppressed": 27,
+      "VL due": 0,
+      "VL pending": 0,
+      "EAC required": 27,
+      "Post-EAC VL due": 4,
+      "TX_ML": 7,
+      "VL coverage %": 100,
+      "Suppression %": 82.9,
+      "IIT %": 5.8
+    },
+    {
+      "Facility": "Sani Abacha Specialist Hospital",
+      "Total clients": 177,
+      "Active": 114,
+      "IIT": 41,
+      "IIT this period": 0,
+      "VL eligible": 113,
+      "With current VL": 113,
+      "Suppressed": 104,
+      "Unsuppressed": 9,
+      "VL due": 0,
+      "VL pending": 0,
+      "EAC required": 9,
+      "Post-EAC VL due": 0,
+      "TX_ML": 6,
+      "VL coverage %": 100,
+      "Suppression %": 92,
+      "IIT %": 23.2
+    },
+    {
+      "Facility": "All",
+      "Total clients": 665,
+      "Active": 409,
+      "IIT": 100,
+      "IIT this period": 1,
+      "VL eligible": 399,
+      "With current VL": 399,
+      "Suppressed": 355,
+      "Unsuppressed": 44,
+      "VL due": 0,
+      "VL pending": 0,
+      "EAC required": 44,
+      "Post-EAC VL due": 6,
+      "TX_ML": 16,
+      "VL coverage %": 100,
+      "Suppression %": 89,
+      "IIT %": 15
+    }
+  ],
+  "byLga": [
+    {
+      "LGA": "Bade",
+      "Total clients": 58,
+      "Active": 32,
+      "IIT": 12,
+      "IIT this period": 1,
+      "VL eligible": 31,
+      "With current VL": 31,
+      "Suppressed": 31,
+      "Unsuppressed": 0,
+      "VL due": 0,
+      "VL pending": 0,
+      "EAC required": 0,
+      "Post-EAC VL due": 0,
+      "TX_ML": 2,
+      "VL coverage %": 100,
+      "Suppression %": 100,
+      "IIT %": 20.7
+    },
+    {
+      "LGA": "Damaturu",
+      "Total clients": 177,
+      "Active": 114,
+      "IIT": 41,
+      "IIT this period": 0,
+      "VL eligible": 113,
+      "With current VL": 113,
+      "Suppressed": 104,
+      "Unsuppressed": 9,
+      "VL due": 0,
+      "VL pending": 0,
+      "EAC required": 9,
+      "Post-EAC VL due": 0,
+      "TX_ML": 6,
+      "VL coverage %": 100,
+      "Suppression %": 92,
+      "IIT %": 23.2
+    },
+    {
+      "LGA": "Fika",
+      "Total clients": 19,
+      "Active": 18,
+      "IIT": 0,
+      "IIT this period": 0,
+      "VL eligible": 18,
+      "With current VL": 18,
+      "Suppressed": 16,
+      "Unsuppressed": 2,
+      "VL due": 0,
+      "VL pending": 0,
+      "EAC required": 2,
+      "Post-EAC VL due": 1,
+      "TX_ML": 0,
+      "VL coverage %": 100,
+      "Suppression %": 88.9,
+      "IIT %": 0
+    },
+    {
+      "LGA": "Geidam",
+      "Total clients": 25,
+      "Active": 17,
+      "IIT": 0,
+      "IIT this period": 0,
+      "VL eligible": 17,
+      "With current VL": 17,
+      "Suppressed": 15,
+      "Unsuppressed": 2,
+      "VL due": 0,
+      "VL pending": 0,
+      "EAC required": 2,
+      "Post-EAC VL due": 1,
+      "TX_ML": 0,
+      "VL coverage %": 100,
+      "Suppression %": 88.2,
+      "IIT %": 0
+    },
+    {
+      "LGA": "Jakusko",
+      "Total clients": 11,
+      "Active": 9,
+      "IIT": 0,
+      "IIT this period": 0,
+      "VL eligible": 8,
+      "With current VL": 8,
+      "Suppressed": 8,
+      "Unsuppressed": 0,
+      "VL due": 0,
+      "VL pending": 0,
+      "EAC required": 0,
+      "Post-EAC VL due": 0,
+      "TX_ML": 0,
+      "VL coverage %": 100,
+      "Suppression %": 100,
+      "IIT %": 0
+    },
+    {
+      "LGA": "Nguru",
+      "Total clients": 101,
+      "Active": 54,
+      "IIT": 31,
+      "IIT this period": 0,
+      "VL eligible": 54,
+      "With current VL": 54,
+      "Suppressed": 50,
+      "Unsuppressed": 4,
+      "VL due": 0,
+      "VL pending": 0,
+      "EAC required": 4,
+      "Post-EAC VL due": 0,
+      "TX_ML": 1,
+      "VL coverage %": 100,
+      "Suppression %": 92.6,
+      "IIT %": 30.7
+    },
+    {
+      "LGA": "Potiskum",
+      "Total clients": 274,
+      "Active": 165,
+      "IIT": 16,
+      "IIT this period": 0,
+      "VL eligible": 158,
+      "With current VL": 158,
+      "Suppressed": 131,
+      "Unsuppressed": 27,
+      "VL due": 0,
+      "VL pending": 0,
+      "EAC required": 27,
+      "Post-EAC VL due": 4,
+      "TX_ML": 7,
+      "VL coverage %": 100,
+      "Suppression %": 82.9,
+      "IIT %": 5.8
+    },
+    {
+      "LGA": "All",
+      "Total clients": 665,
+      "Active": 409,
+      "IIT": 100,
+      "IIT this period": 1,
+      "VL eligible": 399,
+      "With current VL": 399,
+      "Suppressed": 355,
+      "Unsuppressed": 44,
+      "VL due": 0,
+      "VL pending": 0,
+      "EAC required": 44,
+      "Post-EAC VL due": 6,
+      "TX_ML": 16,
+      "VL coverage %": 100,
+      "Suppression %": 89,
+      "IIT %": 15
+    }
+  ],
+  "bySex": [
+    {
+      "Sex": "Female",
+      "Total clients": 342,
+      "Active": 213,
+      "IIT": 47,
+      "IIT this period": 1,
+      "VL eligible": 203,
+      "With current VL": 203,
+      "Suppressed": 182,
+      "Unsuppressed": 21,
+      "VL due": 0,
+      "VL pending": 0,
+      "EAC required": 21,
+      "Post-EAC VL due": 3,
+      "TX_ML": 9,
+      "VL coverage %": 100,
+      "Suppression %": 89.7,
+      "IIT %": 13.7
+    },
+    {
+      "Sex": "Male",
+      "Total clients": 323,
+      "Active": 196,
+      "IIT": 53,
+      "IIT this period": 0,
+      "VL eligible": 196,
+      "With current VL": 196,
+      "Suppressed": 173,
+      "Unsuppressed": 23,
+      "VL due": 0,
+      "VL pending": 0,
+      "EAC required": 23,
+      "Post-EAC VL due": 3,
+      "TX_ML": 7,
+      "VL coverage %": 100,
+      "Suppression %": 88.3,
+      "IIT %": 16.4
+    },
+    {
+      "Sex": "All",
+      "Total clients": 665,
+      "Active": 409,
+      "IIT": 100,
+      "IIT this period": 1,
+      "VL eligible": 399,
+      "With current VL": 399,
+      "Suppressed": 355,
+      "Unsuppressed": 44,
+      "VL due": 0,
+      "VL pending": 0,
+      "EAC required": 44,
+      "Post-EAC VL due": 6,
+      "TX_ML": 16,
+      "VL coverage %": 100,
+      "Suppression %": 89,
+      "IIT %": 15
+    }
+  ],
+  "byAgeGroup": [
+    {
+      "Age Group": "10-14",
+      "Total clients": 265,
+      "Active": 160,
+      "IIT": 52,
+      "IIT this period": 0,
+      "VL eligible": 160,
+      "With current VL": 160,
+      "Suppressed": 147,
+      "Unsuppressed": 13,
+      "VL due": 0,
+      "VL pending": 0,
+      "EAC required": 13,
+      "Post-EAC VL due": 1,
+      "TX_ML": 7,
+      "VL coverage %": 100,
+      "Suppression %": 91.9,
+      "IIT %": 19.6
+    },
+    {
+      "Age Group": "Unknown",
+      "Total clients": 400,
+      "Active": 249,
+      "IIT": 48,
+      "IIT this period": 1,
+      "VL eligible": 239,
+      "With current VL": 239,
+      "Suppressed": 208,
+      "Unsuppressed": 31,
+      "VL due": 0,
+      "VL pending": 0,
+      "EAC required": 31,
+      "Post-EAC VL due": 5,
+      "TX_ML": 9,
+      "VL coverage %": 100,
+      "Suppression %": 87,
+      "IIT %": 12
+    },
+    {
+      "Age Group": "All",
+      "Total clients": 665,
+      "Active": 409,
+      "IIT": 100,
+      "IIT this period": 1,
+      "VL eligible": 399,
+      "With current VL": 399,
+      "Suppressed": 355,
+      "Unsuppressed": 44,
+      "VL due": 0,
+      "VL pending": 0,
+      "EAC required": 44,
+      "Post-EAC VL due": 6,
+      "TX_ML": 16,
+      "VL coverage %": 100,
+      "Suppression %": 89,
+      "IIT %": 15
+    }
+  ],
+  "txMl": [
+    {
+      "Reason": "Transferred out",
+      "Clients": 9,
+      "% of TX_ML": 56.2
+    },
+    {
+      "Reason": "Refused / stopped treatment",
+      "Clients": 3,
+      "% of TX_ML": 18.8
+    },
+    {
+      "Reason": "Died",
+      "Clients": 3,
+      "% of TX_ML": 18.8
+    },
+    {
+      "Reason": "IIT after 3+ months on ART",
+      "Clients": 1,
+      "% of TX_ML": 6.2
+    },
+    {
+      "Reason": "All TX_ML",
+      "Clients": 16,
+      "% of TX_ML": 100
+    }
+  ],
+  "artStatusTransitions": [
+    {
+      "Previous status": "Active Restart",
+      "Current status": "Active",
+      "Clients": 4
+    },
+    {
+      "Previous status": "Active",
+      "Current status": "Transferred Out",
+      "Clients": 2
+    },
+    {
+      "Previous status": "Active",
+      "Current status": "Stopped Treatment",
+      "Clients": 1
+    },
+    {
+      "Previous status": "Active",
+      "Current status": "Died",
+      "Clients": 1
+    }
+  ],
+  "artStatusDistribution": [
+    {
+      "status": "Active",
+      "clients": 409
+    },
+    {
+      "status": "IIT",
+      "clients": 100
+    },
+    {
+      "status": "Died",
+      "clients": 73
+    },
+    {
+      "status": "Transferred Out",
+      "clients": 70
+    },
+    {
+      "status": "Stopped Treatment",
+      "clients": 13
+    }
+  ],
+  "vlStatusDistribution": [
+    {
+      "status": "Suppressed",
+      "clients": 355
+    },
+    {
+      "status": "Not eligible",
+      "clients": 266
+    },
+    {
+      "status": "Unsuppressed",
+      "clients": 44
+    }
+  ],
+  "followUpQueues": [
+    {
+      "key": "iit",
+      "label": "Interrupted treatment",
+      "count": 1
+    },
+    {
+      "key": "vlDue",
+      "label": "Due for viral load",
+      "count": 0
+    },
+    {
+      "key": "vlPending",
+      "label": "VL result pending",
+      "count": 0
+    },
+    {
+      "key": "unsuppressed",
+      "label": "Unsuppressed",
+      "count": 44
+    },
+    {
+      "key": "eacRequired",
+      "label": "EAC required",
+      "count": 44
+    },
+    {
+      "key": "postEacVlDue",
+      "label": "Post-EAC VL due",
+      "count": 6
+    },
+    {
+      "key": "failedEac",
+      "label": "Unsuppressed after EAC",
+      "count": 2
+    }
+  ]
+}
