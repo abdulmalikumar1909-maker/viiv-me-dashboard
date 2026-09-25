@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lafiyan Matasa Data Flow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #f3f5f8;
+    --surface: #ffffff;
+    --ink: #13202f;
+    --muted: #5b6878;
+    --faint: #8b96a5;
+    --line: #c9d1dc;
+    --zone: #e9edf3;
+    --accent: #1466b8;
+    --accent-soft: #e3eefa;
+    --warn: #9a5c00;
+    --warn-line: #e3a13a;
+    --warn-soft: #fff4de;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #0f141b;
+      --surface: #171e28;
+      --ink: #eef2f7;
+      --muted: #a3afbf;
+      --faint: #7c889a;
+      --line: #394556;
+      --zone: #141a23;
+      --accent: #5aa2ee;
+      --accent-soft: #1b2b40;
+      --warn: #f0b43c;
+      --warn-line: #c98a1e;
+      --warn-soft: #2a2213;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0f141b;
+    --surface: #171e28;
+    --ink: #eef2f7;
+    --muted: #a3afbf;
+    --faint: #7c889a;
+    --line: #394556;
+    --zone: #141a23;
+    --accent: #5aa2ee;
+    --accent-soft: #1b2b40;
+    --warn: #f0b43c;
+    --warn-line: #c98a1e;
+    --warn-soft: #2a2213;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .page {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 40px 20px 56px;
+    display: grid;
+    gap: 32px;
+  }
+  header { display: grid; gap: 8px; max-width: 68ch; }
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(26px, 4vw, 36px);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+  header p { margin: 0; color: var(--muted); }
+
+  figure { margin: 0; display: grid; gap: 12px; }
+  .scroll {
+    overflow-x: auto;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 16px;
+  }
+  svg.flow { display: block; width: 100%; min-width: 860px; height: auto; font-family: var(--sans); }
+  figcaption { font-size: 13.5px; color: var(--muted); max-width: 80ch; }
+
+  /* SVG roles */
+  .zone { fill: var(--zone); stroke: var(--line); stroke-dasharray: 5 5; }
+  .zone-label { fill: var(--faint); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; }
+  .box { fill: var(--surface); stroke: var(--line); stroke-width: 1.2; }
+  .box.you { fill: var(--accent-soft); stroke: var(--accent); }
+  .box.private { fill: var(--warn-soft); stroke: var(--warn-line); stroke-width: 1.6; }
+  .t { fill: var(--ink); font-size: 13px; font-weight: 600; }
+  .s { fill: var(--muted); font-size: 11px; }
+  .m { fill: var(--muted); font-size: 10.5px; font-family: var(--mono); }
+  .private-note { fill: var(--warn); font-size: 11px; font-weight: 600; }
+  .edge { stroke: var(--faint); stroke-width: 1.5; fill: none; }
+  .edge.hot { stroke: var(--accent); stroke-width: 2.2; }
+  .el { fill: var(--muted); font-size: 11px; }
+  .el.hot { fill: var(--accent); font-weight: 600; }
+  .head { fill: var(--faint); }
+  .head.hot { fill: var(--accent); }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 18px 16px;
+    display: grid;
+    gap: 8px;
+    align-content: start;
+  }
+  .card h2 { margin: 0; font-size: 16px; }
+  .card p, .card li { margin: 0; color: var(--muted); font-size: 14px; }
+  .card ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+  code {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    background: var(--zone);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    padding: 0 5px;
+    color: var(--ink);
+    overflow-wrap: anywhere;
+  }
+  .card.private { border-color: var(--warn-line); background: var(--warn-soft); }
+  .card.private h2 { color: var(--warn); }
+</style>
+<style>body{margin:0}</style>
+</head>
+<body>
+
+<main class="page">
+  <header>
+    <span class="eyebrow">Lafiyan Matasa · M&amp;E</span>
+    <h1>How a RADET becomes the live dashboard</h1>
+    <p>You drop one file into a folder. Everything after that runs by itself, and patient-level data never leaves your computer.</p>
+  </header>
+
+  <figure>
+    <div class="scroll">
+      <svg class="flow" viewBox="0 0 1040 525" role="img"
+        aria-label="Data flow: a RADET export is dropped into RADET_inbox; the watcher runs the analysis, which writes the Excel report and the full patient data on the computer; the sanitizer strips client records and pushes aggregate figures only to GitHub, which triggers Netlify to rebuild the public dashboard.">
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path class="head" d="M0,0 L10,5 L0,10 z" />
+          </marker>
+          <marker id="ah-hot" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path class="head hot" d="M0,0 L10,5 L0,10 z" />
+          </marker>
+        </defs>
+
+        <!-- Zones -->
+        <rect class="zone" x="8" y="10" width="1024" height="300" rx="14" />
+        <text class="zone-label" x="30" y="38">ON YOUR COMPUTER</text>
+        <rect class="zone" x="8" y="352" width="1024" height="162" rx="14" />
+        <text class="zone-label" x="30" y="380">ONLINE</text>
+
+        <!-- Row 1 -->
+        <rect class="box you" x="30" y="60" width="140" height="72" rx="10" />
+        <text class="t" x="100" y="85" text-anchor="middle">RADET export</text>
+        <text class="s" x="100" y="103" text-anchor="middle">from NDR, any name</text>
+        <text class="m" x="100" y="119" text-anchor="middle">.xlsx</text>
+
+        <rect class="box" x="240" y="60" width="140" height="72" rx="10" />
+        <text class="t" x="310" y="85" text-anchor="middle">Inbox folder</text>
+        <text class="m" x="310" y="103" text-anchor="middle">RADET_inbox\</text>
+        <text class="s" x="310" y="119" text-anchor="middle">in ViiV_Python_M&amp;E</text>
+
+        <rect class="box" x="450" y="60" width="140" height="72" rx="10" />
+        <text class="t" x="520" y="85" text-anchor="middle">Watcher</text>
+        <text class="m" x="520" y="103" text-anchor="middle">watch_radet.py</text>
+        <text class="s" x="520" y="119" text-anchor="middle">starts at Windows login</text>
+
+        <rect class="box" x="660" y="60" width="140" height="72" rx="10" />
+        <text class="t" x="730" y="85" text-anchor="middle">M&amp;E analysis</text>
+        <text class="m" x="730" y="103" text-anchor="middle">run_analysis.py</text>
+        <text class="s" x="730" y="119" text-anchor="middle">cleans &amp; calculates</text>
+
+        <rect class="box private" x="870" y="60" width="140" height="72" rx="10" />
+        <text class="t" x="940" y="85" text-anchor="middle">Full patient data</text>
+        <text class="m" x="940" y="103" text-anchor="middle">data-private\</text>
+        <text class="private-note" x="940" y="119" text-anchor="middle">never leaves this PC</text>
+
+        <!-- Row 1 edges -->
+        <line class="edge" x1="170" y1="96" x2="238" y2="96" marker-end="url(#ah)" />
+        <text class="el" x="205" y="74" text-anchor="middle">you drop</text>
+        <text class="el" x="205" y="87" text-anchor="middle">the file</text>
+
+        <line class="edge" x1="380" y1="96" x2="448" y2="96" marker-end="url(#ah)" />
+        <text class="el" x="415" y="74" text-anchor="middle">checks</text>
+        <text class="el" x="415" y="87" text-anchor="middle">every 5 s</text>
+
+        <line class="edge" x1="590" y1="96" x2="658" y2="96" marker-end="url(#ah)" />
+        <text class="el" x="625" y="87" text-anchor="middle">runs</text>
+
+        <line class="edge" x1="800" y1="96" x2="868" y2="96" marker-end="url(#ah)" />
+        <text class="el" x="835" y="74" text-anchor="middle">writes</text>
+        <text class="el" x="835" y="87" text-anchor="middle">full JSON</text>
+
+        <!-- Row 2 -->
+        <rect class="box" x="450" y="210" width="140" height="72" rx="10" />
+        <text class="t" x="520" y="235" text-anchor="middle">Archive &amp; log</text>
+        <text class="m" x="520" y="253" text-anchor="middle">processed\ failed\</text>
+        <text class="m" x="520" y="269" text-anchor="middle">watch_radet.log</text>
+
+        <rect class="box" x="660" y="210" width="140" height="72" rx="10" />
+        <text class="t" x="730" y="235" text-anchor="middle">Excel report</text>
+        <text class="m" x="730" y="253" text-anchor="middle">output\</text>
+        <text class="s" x="730" y="269" text-anchor="middle">indicators &amp; lists</text>
+
+        <rect class="box" x="870" y="210" width="140" height="72" rx="10" />
+        <text class="t" x="940" y="235" text-anchor="middle">Sanitizer</text>
+        <text class="m" x="940" y="253" text-anchor="middle">sanitize-data.mjs</text>
+        <text class="s" x="940" y="269" text-anchor="middle">keeps totals only</text>
+
+        <!-- Row 1 to row 2 edges -->
+        <line class="edge" x1="520" y1="132" x2="520" y2="208" marker-end="url(#ah)" />
+        <text class="el" x="528" y="174">moves file,</text>
+        <text class="el" x="528" y="187">logs result</text>
+
+        <line class="edge" x1="730" y1="132" x2="730" y2="208" marker-end="url(#ah)" />
+        <text class="el" x="738" y="180">writes</text>
+
+        <line class="edge" x1="940" y1="132" x2="940" y2="208" marker-end="url(#ah)" />
+        <text class="el" x="948" y="174">removes</text>
+        <text class="el" x="948" y="187">client records</text>
+
+        <!-- The one edge that crosses to the internet -->
+        <line class="edge hot" x1="940" y1="282" x2="940" y2="408" marker-end="url(#ah-hot)" />
+        <text class="el hot" x="930" y="330" text-anchor="end">git push:</text>
+        <text class="el hot" x="930" y="344" text-anchor="end">aggregate figures only</text>
+
+        <!-- Row 3 (online) -->
+        <rect class="box" x="870" y="410" width="140" height="72" rx="10" />
+        <text class="t" x="940" y="435" text-anchor="middle">GitHub</text>
+        <text class="s" x="940" y="453" text-anchor="middle">private repository</text>
+        <text class="m" x="940" y="469" text-anchor="middle">viiv-me-dashboard</text>
+
+        <rect class="box" x="660" y="410" width="140" height="72" rx="10" />
+        <text class="t" x="730" y="435" text-anchor="middle">Netlify</text>
+        <text class="m" x="730" y="453" text-anchor="middle">npm run build</text>
+        <text class="s" x="730" y="469" text-anchor="middle">hosts the site 24/7</text>
+
+        <rect class="box" x="450" y="410" width="140" height="72" rx="10" />
+        <text class="t" x="520" y="435" text-anchor="middle">Live dashboard</text>
+        <text class="s" x="520" y="453" text-anchor="middle">public website</text>
+        <text class="s" x="520" y="469" text-anchor="middle">refreshes every 60 s</text>
+
+        <rect class="box" x="240" y="410" width="140" height="72" rx="10" />
+        <text class="t" x="310" y="435" text-anchor="middle">Team &amp; partners</text>
+        <text class="s" x="310" y="453" text-anchor="middle">phone or computer</text>
+        <text class="s" x="310" y="469" text-anchor="middle">no login needed</text>
+
+        <!-- Row 3 edges -->
+        <line class="edge" x1="870" y1="446" x2="802" y2="446" marker-end="url(#ah)" />
+        <text class="el" x="835" y="424" text-anchor="middle">triggers</text>
+        <text class="el" x="835" y="437" text-anchor="middle">a rebuild</text>
+
+        <line class="edge" x1="660" y1="446" x2="592" y2="446" marker-end="url(#ah)" />
+        <text class="el" x="625" y="437" text-anchor="middle">deploys</text>
+
+        <line class="edge" x1="450" y1="446" x2="382" y2="446" marker-end="url(#ah)" />
+        <text class="el" x="415" y="424" text-anchor="middle">viewed</text>
+        <text class="el" x="415" y="437" text-anchor="middle">in browser</text>
+      </svg>
+    </div>
+    <figcaption>Only one arrow leaves your computer: the push of aggregate figures to GitHub. The full patient data, the Excel report and the RADET files all stay local. From dropping the file to the site updating takes about two minutes.</figcaption>
+  </figure>
+
+  <section class="cards" aria-label="Details">
+    <div class="card">
+      <h2>Your part</h2>
+      <p>Save the new RADET export into <code>C:\Users\user\ViiV_Python_M&amp;E\RADET_inbox</code>. Any file name works, as long as it is <code>.xlsx</code>. If you drop several at once, only the newest is used.</p>
+    </div>
+    <div class="card">
+      <h2>What runs automatically</h2>
+      <ul>
+        <li>The watcher waits until the file has finished copying.</li>
+        <li>The analysis builds the indicators and the Excel report.</li>
+        <li>The sanitizer strips patient records, then the result is pushed.</li>
+        <li>Netlify rebuilds the site and open dashboards pick up the new numbers.</li>
+      </ul>
+    </div>
+    <div class="card private">
+      <h2>What stays private</h2>
+      <p>Client records, hospital numbers, patient IDs and case manager names stay in <code>data-private\</code>. That folder is excluded from git, and the sanitizer refuses to publish if any of those fields slip through.</p>
+    </div>
+    <div class="card">
+      <h2>If the site doesn't update</h2>
+      <ul>
+        <li>Open <code>watch_radet.log</code> to see which step failed.</li>
+        <li>A file in <code>RADET_inbox\failed\</code> means the analysis could not read it.</li>
+        <li>No Python window in the taskbar means the watcher isn't running. Start <strong>ViiV RADET Watcher</strong> from the Startup folder.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+</body>
+</html>
