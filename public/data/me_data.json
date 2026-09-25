@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-09-25T12:43:34",
+    "generatedAt": "2026-09-25T15:07:14",
     "fiscalYear": 2026,
     "periodStart": "2025-10-01",
     "periodEnd": "2026-09-30",
@@ -11,7 +11,7 @@
     "vlValidityMonths": 12,
     "recordsExcluded": 3,
     "cohort": {
-      "rowsInExport": 215936,
+      "rowsInExport": 215943,
       "rowsInState": 16941,
       "rowsKept": 668,
       "state": "Yobe",
