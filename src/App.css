@@ -120,7 +120,7 @@ section {
   display: block;
   width: 100%;
   min-height: 115px !important;
-  height: auto !important;
+  height: 115px !important;
   box-sizing: border-box;
   background: #ffffff;
   border-radius: 16px;
